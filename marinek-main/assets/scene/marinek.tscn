@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://cpk5ig3jjgbcp"]
+
+[ext_resource type="Texture2D" uid="uid://cxrkdychoj078" path="res://assets/sprites/marinenk.png" id="1_m54a2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s38oo"]
+atlas = ExtResource("1_m54a2")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqhls"]
+atlas = ExtResource("1_m54a2")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcrpo"]
+atlas = ExtResource("1_m54a2")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iuw7l"]
+atlas = ExtResource("1_m54a2")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cg6ep"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s38oo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqhls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcrpo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iuw7l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qr3n"]
+size = Vector2(2, 2)
+
+[node name="marinek" type="Area2D"]
+position = Vector2(-7, 6)
+collision_layer = 4
+collision_mask = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(7, -6)
+scale = Vector2(0.820313, 0.75)
+sprite_frames = SubResource("SpriteFrames_cg6ep")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, -6)
+shape = SubResource("RectangleShape2D_3qr3n")
